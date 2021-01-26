@@ -11,6 +11,11 @@
 /*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
+
+-- Volcando estructura de base de datos para integramedia
+CREATE DATABASE IF NOT EXISTS `integramedia` /*!40100 DEFAULT CHARACTER SET utf8mb4 */;
+USE `integramedia`;
+
 -- Volcando estructura para tabla integramedia.clients
 CREATE TABLE IF NOT EXISTS `clients` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
@@ -23,9 +28,11 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `modified` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`),
   UNIQUE KEY `dni` (`dni`)
-) ENGINE=InnoDB AUTO_INCREMENT=40 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- La exportación de datos fue deseleccionada.
+-- Volcando datos para la tabla integramedia.clients: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `clients` DISABLE KEYS */;
+/*!40000 ALTER TABLE `clients` ENABLE KEYS */;
 
 -- Volcando estructura para tabla integramedia.employees
 CREATE TABLE IF NOT EXISTS `employees` (
@@ -39,9 +46,13 @@ CREATE TABLE IF NOT EXISTS `employees` (
   `modified` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE KEY `file` (`file`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
--- La exportación de datos fue deseleccionada.
+-- Volcando datos para la tabla integramedia.employees: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `employees` DISABLE KEYS */;
+INSERT INTO `employees` (`id`, `name`, `last_name`, `dni`, `birthday`, `file`, `created`, `modified`) VALUES
+	(1, 'Tobias', 'Olivarez', 33756814, '1988-05-20', 123, '2021-01-26 19:34:54', NULL);
+/*!40000 ALTER TABLE `employees` ENABLE KEYS */;
 
 -- Volcando estructura para tabla integramedia.products
 CREATE TABLE IF NOT EXISTS `products` (
@@ -54,9 +65,11 @@ CREATE TABLE IF NOT EXISTS `products` (
   `created` timestamp NOT NULL DEFAULT current_timestamp(),
   `modified` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- La exportación de datos fue deseleccionada.
+-- Volcando datos para la tabla integramedia.products: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `products` DISABLE KEYS */;
+/*!40000 ALTER TABLE `products` ENABLE KEYS */;
 
 -- Volcando estructura para tabla integramedia.providers
 CREATE TABLE IF NOT EXISTS `providers` (
@@ -67,9 +80,11 @@ CREATE TABLE IF NOT EXISTS `providers` (
   `created` timestamp NOT NULL DEFAULT current_timestamp(),
   `modified` timestamp NULL DEFAULT NULL ON UPDATE current_timestamp(),
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 ROW_FORMAT=DYNAMIC;
 
--- La exportación de datos fue deseleccionada.
+-- Volcando datos para la tabla integramedia.providers: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `providers` DISABLE KEYS */;
+/*!40000 ALTER TABLE `providers` ENABLE KEYS */;
 
 -- Volcando estructura para tabla integramedia.sales
 CREATE TABLE IF NOT EXISTS `sales` (
@@ -79,9 +94,11 @@ CREATE TABLE IF NOT EXISTS `sales` (
   `datetime` datetime NOT NULL DEFAULT current_timestamp(),
   `total` double NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- La exportación de datos fue deseleccionada.
+-- Volcando datos para la tabla integramedia.sales: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `sales` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sales` ENABLE KEYS */;
 
 -- Volcando estructura para tabla integramedia.sales_detail
 CREATE TABLE IF NOT EXISTS `sales_detail` (
@@ -92,9 +109,11 @@ CREATE TABLE IF NOT EXISTS `sales_detail` (
   `price` double NOT NULL DEFAULT 0,
   `amount` double NOT NULL DEFAULT 0,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- La exportación de datos fue deseleccionada.
+-- Volcando datos para la tabla integramedia.sales_detail: ~0 rows (aproximadamente)
+/*!40000 ALTER TABLE `sales_detail` DISABLE KEYS */;
+/*!40000 ALTER TABLE `sales_detail` ENABLE KEYS */;
 
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
